@@ -11,7 +11,7 @@ public class Objet {
 		this.nom = n;
 		this.poids = d;
 		this.valeur = e;
-		this.rapport = 0;
+		this.rapport = e/d;
 	}
 	
 	public double getVal() {
@@ -24,10 +24,5 @@ public class Objet {
 
 	public void setRapport(double r) {
 		this.rapport = r; 
-	}
-	
-	//Calcul le rapport prix/poids
-	public double calculRapport() {
-		return (this.getVal()/this.getPoids());
 	}
 }
