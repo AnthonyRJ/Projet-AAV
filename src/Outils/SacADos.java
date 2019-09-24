@@ -20,4 +20,8 @@ public class SacADos {
 	public ArrayList<Objet> getListeObjets() {
 		return this.ListeObjets;
 	}
+	
+	public double getCapacite() {
+		return this.capaciteMax;
+	}
 }

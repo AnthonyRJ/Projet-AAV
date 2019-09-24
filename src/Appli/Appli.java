@@ -1,6 +1,4 @@
 package Appli;
-import java.util.ArrayList;
-
 import MethodeResolution.Gloutonne;
 import Outils.Objet;
 import Outils.SacADos;
@@ -13,18 +11,19 @@ public class Appli {
 		Objet CampingGaz = new Objet("CampingGaz", 3.0, 40.0);
 		Objet CouteauSuisse = new Objet("CouteauSuisse",0.2,50.0);
 		
-		SacADos sac = new SacADos(30.0);
+		SacADos sac = new SacADos(5.0);
 		
-		ArrayList<Objet> liste = new ArrayList<Objet>();
+		Objet[] liste = new Objet[4];
 		
-		liste.add(lampe);
-		liste.add(SacDeCouchage);
-		liste.add(CampingGaz);
-		liste.add(CouteauSuisse);
+		liste[0] = lampe;
+		liste[1] = SacDeCouchage;
+		liste[2] = CampingGaz;
+		liste[3] = CouteauSuisse;
 		
 		Gloutonne methodeGlou = new Gloutonne(liste,sac);
 		
-		methodeGlou.calculRapportObjet();
+		methodeGlou.resoudre();
+		System.out.println(methodeGlou.toString());
 		
 	}
 
