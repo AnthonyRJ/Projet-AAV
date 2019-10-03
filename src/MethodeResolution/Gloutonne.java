@@ -53,7 +53,7 @@ public class Gloutonne {
 		return s;
 	}
 	
-	//Methode à appeler pour résoudre le problème du sac à dos avec la méthode Gloutonne
+	//Methode à appeler pour résoudre le problème du sac à dos avec la méthode Dynamique
 	public void resoudre() {
 		trier();
 		ajouterDansSac();

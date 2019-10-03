@@ -54,8 +54,8 @@ public class Appli {
 		
 		Dynamique methodeDyna = new Dynamique(sac,liste);
 		
-		methodeDyna.remplissageMatrice();
-		
+		methodeDyna.resoudre();
+		System.out.println(methodeDyna.toString());
 	}
 
 }
