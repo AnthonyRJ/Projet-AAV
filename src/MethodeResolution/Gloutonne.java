@@ -44,7 +44,13 @@ public class Gloutonne {
 	
 	public String toString() {
 		String s = new String();
-		s += "Voici le contenu du sac : \n";
+		
+		if (this.sac.getListeObjets().size() == 0) {
+			s += "Le sac est vide, vous ne pouvez mettre aucun de vos objets dedans";
+		}
+		else {
+			s += "Voici le contenu du sac : \n";
+		}
 		
 		for (Objet obj : this.sac.getListeObjets()) {
 			s += obj.getNom() + "\n";

@@ -30,16 +30,26 @@ public class Appli {
 		System.out.println(methodeGlou.toString());*/
 		
 		/*TEST METHODE DYNAMIQUE*/
-		Objet lampe = new Objet("lampe",2.0,5.0);
+		/*Objet lampe = new Objet("lampe",2.0,5.0);
 		Objet SacDeCouchage = new Objet("SacDeCouchage",3.0,8.0);
 		Objet CampingGaz = new Objet("CampingGaz", 5.0, 14.0);
 		Objet CouteauSuisse = new Objet("CouteauSuisse",2.0,6.0);
 		Objet Snickers = new Objet("Snickers",4.0,13.0);
 		Objet Tente = new Objet("Tente",6.0,17.0);
 		Objet Briquet = new Objet("Briquet",3.0,10.0);
-		Objet Coca = new Objet("Coca", 1.0,4.0);
+		Objet Coca = new Objet("Coca", 1.0,4.0);*/
 		
-		SacADos sac = new SacADos(12.0);
+		Objet lampe = new Objet("lampe",2.0,30.0);
+		Objet SacDeCouchage = new Objet("SacDeCouchage",1.0,20.0);
+		Objet CampingGaz = new Objet("CampingGaz", 3.0, 40.0);
+		Objet CouteauSuisse = new Objet("CouteauSuisse",0.2,50.0);
+		Objet Snickers = new Objet("Snickers",0.1,3.0);
+		Objet Tente = new Objet("Tente",3.0,100.0);
+		Objet Briquet = new Objet("Briquet",0.2,3.0);
+		Objet Coca = new Objet("Coca", 10.0,20.0);
+		Objet Chips = new Objet("Chips", 0.2, 2.0);
+		
+		SacADos sac = new SacADos(8.7);
 		
 		ArrayList<Objet> liste = new ArrayList<>();
 		
