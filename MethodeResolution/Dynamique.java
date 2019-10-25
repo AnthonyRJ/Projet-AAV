@@ -35,26 +35,10 @@ public class Dynamique {
 				}
 				else {
 					int ordonnee = (int) (k - this.objets.get(i).getPoids());
-					this.matrice[i][k] = max(this.matrice[i-1][k],this.matrice[i-1][ordonnee] + this.objets.get(i).getVal());
+					this.matrice[i][k] = Math.max(this.matrice[i-1][k],this.matrice[i-1][ordonnee] + this.objets.get(i).getVal());
 				}
 			}
 		}	
-	}
-	
-	/*
-	 * fonction qui compare 2 valeurs
-	 *@return la plus grande valeur entre val1 et val2
-	 */
-	private double max(double matrice2, double d) {
-		if (matrice2 > d) {
-			return matrice2;
-		}
-		else if (matrice2 == d) {
-			return matrice2;
-		}
-		else {
-			return d;
-		}
 	}
 	
 	/*
@@ -84,13 +68,14 @@ public class Dynamique {
 			s += "Le sac est vide, vous ne pouvez mettre aucun de vos objets dedans";
 		}
 		else {
-			s += "Voici le contenu du sac : \n";
+			s += "[";
 		}
-		
-		
 		for (Objet obj : this.sac.getListeObjets()) {
-			s += obj.getNom() + "\n";
+			s += obj.getNom() + ", ";
 		}
+		
+		s = s.substring(0, s.length() - 2);
+		s+="]";
 		
 		return s;
 	}

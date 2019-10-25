@@ -44,12 +44,12 @@ public class ABR{
 				}
 			}
 
-			public void setBorneInf(){
-				Iterator<Objet> it = listeObj.iterator();
-				while(it.hasNext()){
-					borneInf += it.next().getVal();
-				}
-
+			public void setBorneInf(Objet ajouté){
+				this.borneInf = racine.getBorneInf() + ajouté.getVal(); 
+			}
+			
+			public void setBorneInf() {
+				this.borneInf = racine.getBorneInf(); 
 			}
 			
 			/**
@@ -57,8 +57,10 @@ public class ABR{
 			 * @param racine
 			 */
 		    public void setRacine(ABR racine) {
+		    	
 				this.racine = racine;
 				this.setListeObj(racine.getListeObj());
+				
 			}
 			
 			/**
@@ -82,10 +84,11 @@ public class ABR{
 					filsGauche = new ABR();
 					filsGauche.setRacine(this);
 					filsGauche.setBorneInf();
+
 		            filsDroit = new ABR();
 		            filsDroit.setRacine(this);
 					filsDroit.addObjet(o);
-					filsDroit.setBorneInf();
+					filsDroit.setBorneInf(o);
 		        }
 		        else{
 		            filsDroit.ajout(o);
@@ -165,7 +168,6 @@ public class ABR{
 			}
 
 			public ArrayList<Objet> sacOpti(double capMax){
-				System.out.println(this.solutionOpti(capMax).getBorneInf());
 				return this.solutionOpti(capMax).getListeObj();
 			}
 

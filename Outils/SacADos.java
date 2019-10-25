@@ -1,6 +1,8 @@
 package Outils;
 import java.util.ArrayList;
+
 import ABR.ABR;
+import MethodeResolution.*;
 
 public class SacADos {
 	private ArrayList<Objet> ListeObjets;
@@ -20,9 +22,34 @@ public class SacADos {
 		return this.capaciteMax;
 	}
 	
-	public ArrayList<Objet> methodePSE(ArrayList<Objet> listeObjets){
+	private ArrayList<Objet> methodePSE(ArrayList<Objet> listeObjets){
 		ABR arbre = new ABR();
 		arbre.init(listeObjets);
 		return arbre.sacOpti(this.capaciteMax);
+	}
+	
+	public void resoudre(String méthode, ArrayList<Objet> listeObjets) {
+		switch(méthode) {
+		case "gloutonne" : 
+			Gloutonne methodGlou = new Gloutonne(this,listeObjets);
+			methodGlou.resoudre();
+			System.out.println(methodGlou.toString());
+			break;
+		case "prog.dynamique" :
+			Dynamique methodDyna = new Dynamique(this, listeObjets);
+			methodDyna.resoudre();
+			System.out.println(methodDyna.toString());
+			break;
+		case "pse" : 
+			String s = new String(); 
+			s+="[";
+			for(Objet o : this.methodePSE(listeObjets))
+				s+= o.getNom() + ", ";
+			s = s.substring(0 , s.length() - 2);
+			s+="]";
+			System.out.println(s);
+			break;
+		default : System.out.println("Erreur : la méthode indiqué est invalide ou n'existe pas");
+		}
 	}
 }

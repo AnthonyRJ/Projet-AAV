@@ -10,7 +10,7 @@ public class Gloutonne {
 	private SacADos sac;
 	private Objet[] objets;
 	
-	public Gloutonne(ArrayList<Objet> liste, SacADos sac) {
+	public Gloutonne( SacADos sac,ArrayList<Objet> liste) {
 		
 		this.objets = new Objet[liste.size()];
 		
@@ -52,12 +52,14 @@ public class Gloutonne {
 			s += "Le sac est vide, vous ne pouvez mettre aucun de vos objets dedans";
 		}
 		else {
-			s += "Voici le contenu du sac : \n";
+			s += "[";
+		}
+		for (Objet obj : this.sac.getListeObjets()) {
+			s += obj.getNom() + ", ";
 		}
 		
-		for (Objet obj : this.sac.getListeObjets()) {
-			s += obj.getNom() + "\n";
-		}
+		s = s.substring(0, s.length() - 2);
+		s+="]";
 		
 		return s;
 	}
